@@ -22,7 +22,7 @@ class diaspora_plugin extends Plugin
 		if (!extension_loaded('curl'))
 			$this->set_status('disabled');
 
-		$this->name = $this->T_('Diaspora* Plugin');
+		$this->name = $this->T_('Diaspora* Plugin for b2evolution');
 		$this->short_desc = $this->T_('Post to your Diaspora* account when you post to your blog');
 		$this->long_desc = sprintf(
 			/* TRANS: Placeholder for the selected pod. */
@@ -34,7 +34,7 @@ class diaspora_plugin extends Plugin
 		$this->username = $this->get_user_setting('username');
 
 		$this->ping_service_name = $this->get_user_setting('pod');
-		$this->pling_service_note = $this->T_('Update your Diaspora* account with details about the new post.');
+		$this->ping_service_note = $this->T_('Update your Diaspora* account with details about the new post.');
 	}
 
 	function GetDependencies()
@@ -97,17 +97,6 @@ class diaspora_plugin extends Plugin
 			$info = $this->api->last_error;
 
 		$aspects = $this->api->get_aspects();
-		$default_aspect = 'Public';
-		if ($aspects !== FALSE)
-		{
-			$asp[$default_aspect] = $default_aspect;
-			foreach($aspects as $aspect)
-			{
-				$asp[$aspect->name] = $aspect->name;
-			}
-		}
-		else
-			$asp = array($default_aspect);
 
 		return array(
 			'account_status' => array(
@@ -132,10 +121,9 @@ class diaspora_plugin extends Plugin
 				'type' => 'password',
 			),
 			'aspects' => array(
-				'defaultvalue' => $default_aspect,
 				'label' => $this->T_('Aspects'),
 				'multiple' => 1,
-				'options' => $asp,
+				'options' => $aspects,
 				'size' => 30,
 				'type' => 'select',
 			),
@@ -153,9 +141,9 @@ class diaspora_plugin extends Plugin
 	function init_diaspora()
 	{
 		if (!is_object($this->api))
-			$this->api = new WP2D_API();
+			$this->api = new WP2D_API($this->pod);
 		$this->api->provider = $this->name;
-		if ($this->api->init($this->pod) && !$this->api->is_logged_in())
+		if ($this->api->init() && !$this->api->is_logged_in())
 		{
 			$this->api->login($this->username, $this->password);
 		}

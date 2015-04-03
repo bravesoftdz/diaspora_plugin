@@ -8,9 +8,6 @@
  * - Fetching a user's aspects and connected services
  * - Posting to diaspora*
  *
- * After many failed attempts of getting rid of using cURL cookiejar,
- * we've decided to stick with it and remove the temporary cookie file when cleaning up.
- *
  * Ideas in this class are based on classes from:
  * https://github.com/Faldrian/WP-diaspora-postwidget/blob/master/wp-diaspora-postwidget/diasphp.php -- Thanks, Faldrian!
  * https://github.com/meitar/diasposter/blob/master/lib/Diaspora_Connection.php -- Thanks, Meitar
@@ -142,22 +139,27 @@ class WP2D_API {
   /**
    * Get everything set up
    */
-  public function __construct($cookie_jar = '') {
+  public function __construct($pod, $is_secure = true) {
+    // Set class variables
+    $this->_pod       = $pod;
+    $this->_is_secure = (bool) $is_secure;
+
+    // Initialize translations
+    $this->initialize_translations();
+  }
+
+  private function initialize_translations()
+  {
     global $Plugins;
     $this->plug = NULL;
     if (is_object($Plugins))
     {
       $this->plug = $Plugins->get_by_classname('diaspora_plugin');
     }
-
-    if (empty($cookie_jar))
-      $cookie_jar =  tempnam( sys_get_temp_dir(), 'wp2d' );
-    $this->_cookiejar = $cookie_jar; 
   }
 
   public function T_($str, $dom = 'default', $context = '' )
   {
-    global $Plugins;
     if (is_object($this->plug))
       return $this->plug->T_($str);
     elseif (is_function('_x') && !empty($context))
@@ -299,11 +301,12 @@ class WP2D_API {
   /**
    * Post to Diaspora.
    *
-   * @param  string         $text     The text to post.
-   * @param  string|array   $aspects  The aspects to post to. (Array or comma seperated ids)
-   * @return string|boolean           Return the response data of the new diaspora* post if successfully posted, else false.
+   * @param  string         $text       The text to post.
+   * @param  string|array   $aspects    The aspects to post to. (Array or comma seperated ids)
+   * @param  array          $extra_data Any extra data to be added to the post call.
+   * @return string|boolean             Return the response data of the new diaspora* post if successfully posted, else false.
    */
-  public function post( $text, $aspects = 'public' ) {
+  public function post( $text, $aspects = 'public', $extra_data = array() ) {
     // Are we logged in?
     if ( ! $this->_check_login() ) {
       return false;
@@ -318,14 +321,19 @@ class WP2D_API {
       $aspects = 'public';
     }
 
-    // Prepare post data in JSON format.
-    $post_data_json = json_encode( array(
+    // Prepare post data.
+    $post_data = array(
       'aspect_ids'     => $aspects,
       'status_message' => array(
         'text' => $text,
         'provider_display_name' => $this->provider
       )
-    ));
+    );
+
+    // Add any extra data to the post.
+    if ( ! empty( $extra_data ) ) {
+        $post_data += $extra_data;
+    }
 
     // Prepare headers.
     // (MUST fetch new token for this to work)
@@ -336,10 +344,11 @@ class WP2D_API {
     );
 
     // Submit the post.
-    $req = $this->_http_request( '/status_messages', $post_data_json, $headers );
+    $req = $this->_http_request( '/status_messages', json_encode( $post_data ), $headers );
     $response = json_decode( $req->response );
     if ( 201 !== $req->info['http_code'] ) {
-      $this->last_error = ( isset( $response->error ) ) ? $response->error : $this->TS( 'Unknown error occurred.', 'When an unknown error occurred in the WP2D_API object.', 'wp_to_diaspora' );
+      /* TRANS: When an an unknown error occurred in the WP2D_API object. */
+      $this->last_error = ( isset( $response->error ) ) ? $response->error : $this->TS_( 'Unknown error occurred.', 'When an unknown error occurred in the WP2D_API object.', 'wp_to_diaspora' );
       return false;
     }
 
@@ -375,18 +384,18 @@ class WP2D_API {
    * Get the list of connected services.
    *
    * @param  boolean $force Force to fetch new connected services.
-   * @return array          Array of aspect objects.
+   * @return array          Array of service objects.
    */
   public function get_services( $force = false ) {
     if ( ! $this->_check_login() ) {
       return false;
     }
 
-    // Fetch the new list of configured services if the current list is empty or a reload is forced.
+    // Fetch the new list of services if the current list is empty or a reload is forced.
     if ( empty( $this->_services ) || (bool) $force ) {
       $req = $this->_http_request( '/bookmarklet' );
       if ( 200 !== $req->info['http_code'] ) {
-        $this->last_error = $this->T_( 'Error loading configured services.', 'wp_to_diaspora' );
+        $this->last_error = $this->T_( 'Error loading services.', 'wp_to_diaspora' );
         return false;
       }
       // No need for this, as it get's done for each http request anyway.
@@ -460,12 +469,23 @@ class WP2D_API {
     }
 
     // Can we load new aspects while we're at it?
-    if ( $aspects = json_decode( $this->_parse_regex( 'aspects', $response ) ) ) {
+    if ( $aspects_raw = json_decode( $this->_parse_regex( 'aspects', $response ) ) ) {
+      // Add the 'public' aspect, as it's global and not user specific.
+      $aspects = array( 'public' => $this->T_( 'Public' ) );
+
+      // Create an array of all the aspects and save them to the settings.
+      foreach ( $aspects_raw as $aspect ) {
+        $aspects[ $aspect->id ] = $aspect->name;
+      }
       $this->_aspects = $aspects;
     }
 
-    // Can we load new configured services while we're at it?
-    if ( $services = json_decode( $this->_parse_regex( 'services', $response ) ) ) {
+    // Can we load new services while we're at it?
+    if ( $services_raw = json_decode( $this->_parse_regex( 'services', $response ) ) ) {
+      $services = array();
+      foreach ( $services_raw as $service ) {
+        $services[ $service ] = ucfirst( $service );
+      }
       $this->_services = $services;
     }
 

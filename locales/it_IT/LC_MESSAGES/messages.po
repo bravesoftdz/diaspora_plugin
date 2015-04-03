@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WP to Diaspora*\n"
 "Report-Msgid-Bugs-To: http://fplanque.net/\n"
-"POT-Creation-Date: 2015-04-03 18:00-0400\n"
+"POT-Creation-Date: 2015-04-03 20:10-0400\n"
 "PO-Revision-Date: 2015-04-03 13:45-0400\n"
 "Last-Translator: Giulio Roberti\n"
 "Language-Team: \n"
@@ -14,7 +14,7 @@ msgstr ""
 
 #: ../../../_diaspora.plugin.php:25
 #, fuzzy
-msgid "Diaspora* Plugin"
+msgid "Diaspora* Plugin for b2evolution"
 msgstr "Diaspora* Pod "
 
 #: ../../../_diaspora.plugin.php:26
@@ -49,61 +49,70 @@ msgstr ""
 msgid "Successfully logged in to <a href=\"%1$s\">%1$s</a> as %2$s."
 msgstr ""
 
-#: ../../../_diaspora.plugin.php:115
+#: ../../../_diaspora.plugin.php:104
 #, fuzzy
 msgid "Diaspora* account status"
 msgstr "Diaspora* Pod "
 
-#: ../../../_diaspora.plugin.php:120
+#: ../../../_diaspora.plugin.php:109
 msgid "Diaspora* Pod"
 msgstr "Diaspora* Pod "
 
-#: ../../../_diaspora.plugin.php:125
+#: ../../../_diaspora.plugin.php:114
 msgid "Username"
 msgstr "Username"
 
-#: ../../../_diaspora.plugin.php:130
+#: ../../../_diaspora.plugin.php:119
 msgid "Password"
 msgstr "Password"
 
-#: ../../../_diaspora.plugin.php:136
+#: ../../../_diaspora.plugin.php:124
 msgid "Aspects"
 msgstr ""
 
-#: ../../../_diaspora.plugin.php:143
+#: ../../../_diaspora.plugin.php:131
 msgid "Just posted $title$ $url$ #b2p"
 msgstr ""
 
-#: ../../../_diaspora.plugin.php:144
+#: ../../../_diaspora.plugin.php:132
 msgid "Message format"
 msgstr ""
 
-#: ../../../_diaspora.plugin.php:145
+#: ../../../_diaspora.plugin.php:133
 msgid "$title$, $excerpt$ and $url$ will be replaced appropriately."
 msgstr ""
 
 # TRANS: Placeholder is the full pod URL.
-#: ../../../lib/class-api.php:199
+#: ../../../lib/class-api.php:201
 #, php-format
 msgid "Failed to initialise connection to pod \"%s\"."
 msgstr ""
 
-#: ../../../lib/class-api.php:229
+#: ../../../lib/class-api.php:231
 msgid "Not logged in."
 msgstr ""
 
-#: ../../../lib/class-api.php:270
+#: ../../../lib/class-api.php:272
 msgid "Couldn't log in with the credentials specified."
 msgstr ""
 
-#: ../../../lib/class-api.php:290
+#: ../../../lib/class-api.php:292
 msgid "Login failed."
 msgstr ""
 
-#: ../../../lib/class-api.php:365
+# TRANS: When an an unknown error occurred in the WP2D_API object.
+#: ../../../lib/class-api.php:351
+msgid "Unknown error occurred."
+msgstr ""
+
+#: ../../../lib/class-api.php:374
 msgid "Error loading aspects."
 msgstr ""
 
-#: ../../../lib/class-api.php:389
-msgid "Error loading configured services."
+#: ../../../lib/class-api.php:398
+msgid "Error loading services."
+msgstr ""
+
+#: ../../../lib/class-api.php:474
+msgid "Public"
 msgstr ""
