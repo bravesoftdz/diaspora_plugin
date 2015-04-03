@@ -1,0 +1,109 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: WP to Diaspora*\n"
+"Report-Msgid-Bugs-To: http://fplanque.net/\n"
+"POT-Creation-Date: 2015-04-03 18:00-0400\n"
+"PO-Revision-Date: 2015-04-03 13:49-0400\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ro\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: POEditor.com\n"
+
+#: ../../../_diaspora.plugin.php:25
+#, fuzzy
+msgid "Diaspora* Plugin"
+msgstr "Serverul Diaspora*"
+
+#: ../../../_diaspora.plugin.php:26
+msgid "Post to your Diaspora* account when you post to your blog"
+msgstr ""
+
+# TRANS: Placeholder for the selected pod.
+#: ../../../_diaspora.plugin.php:29
+#, php-format
+msgid "Posts to your Diaspora* account to update %s with details of your blog post."
+msgstr ""
+
+#: ../../../_diaspora.plugin.php:37
+msgid "Update your Diaspora* account with details about the new post."
+msgstr ""
+
+#: ../../../_diaspora.plugin.php:53
+msgid "The plugin needs a non-empty code."
+msgstr ""
+
+#: ../../../_diaspora.plugin.php:58
+msgid "This plugin requires PHP 5.3.0 or higher."
+msgstr ""
+
+#: ../../../_diaspora.plugin.php:63
+msgid "This plugin requires the PHP cURL extension."
+msgstr ""
+
+# TRANS: Successfully logged in to pod %1$s as user %2$s
+#: ../../../_diaspora.plugin.php:92
+#, php-format
+msgid "Successfully logged in to <a href=\"%1$s\">%1$s</a> as %2$s."
+msgstr ""
+
+#: ../../../_diaspora.plugin.php:115
+#, fuzzy
+msgid "Diaspora* account status"
+msgstr "Serverul Diaspora*"
+
+#: ../../../_diaspora.plugin.php:120
+msgid "Diaspora* Pod"
+msgstr "Serverul Diaspora*"
+
+#: ../../../_diaspora.plugin.php:125
+msgid "Username"
+msgstr ""
+
+#: ../../../_diaspora.plugin.php:130
+msgid "Password"
+msgstr ""
+
+#: ../../../_diaspora.plugin.php:136
+msgid "Aspects"
+msgstr "Aspecte"
+
+#: ../../../_diaspora.plugin.php:143
+msgid "Just posted $title$ $url$ #b2p"
+msgstr ""
+
+#: ../../../_diaspora.plugin.php:144
+msgid "Message format"
+msgstr ""
+
+#: ../../../_diaspora.plugin.php:145
+msgid "$title$, $excerpt$ and $url$ will be replaced appropriately."
+msgstr ""
+
+# TRANS: Placeholder is the full pod URL.
+#: ../../../lib/class-api.php:199
+#, php-format
+msgid "Failed to initialise connection to pod \"%s\"."
+msgstr ""
+
+#: ../../../lib/class-api.php:229
+msgid "Not logged in."
+msgstr ""
+
+#: ../../../lib/class-api.php:270
+msgid "Couldn't log in with the credentials specified."
+msgstr ""
+
+#: ../../../lib/class-api.php:290
+msgid "Login failed."
+msgstr ""
+
+#: ../../../lib/class-api.php:365
+msgid "Error loading aspects."
+msgstr ""
+
+#: ../../../lib/class-api.php:389
+msgid "Error loading configured services."
+msgstr ""
