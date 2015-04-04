@@ -162,9 +162,9 @@ class WP2D_API {
   {
     if (is_object($this->plug))
       return $this->plug->T_($str);
-    elseif (is_function('_x') && !empty($context))
+    elseif (function_exists('_x') && !empty($context))
       return _x($str, $context, $dom);
-    elseif (is_function('__'))
+    elseif (function_exists('__'))
       return __($str, $dom);
     else
       return $str;

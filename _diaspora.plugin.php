@@ -15,7 +15,7 @@ class diaspora_plugin extends Plugin
 	function PluginInit(& $params)
 	{
 		// Check PHP version
-		if (version_compare(phpversion(), '5.3.0', '<'))
+		if (version_compare(phpversion(), '5.2.0', '<'))
 			$this->set_status('disabled');
 
 		// Must have cURL
@@ -53,9 +53,9 @@ class diaspora_plugin extends Plugin
 			return $this->T_('The plugin needs a non-empty code.');
 		}
 
-		if (version_compare(phpversion(), '5.3.0', '<'))
+		if (version_compare(phpversion(), '5.2.0', '<'))
 		{
-			return $this->T_('This plugin requires PHP 5.3.0 or higher.');
+			return $this->T_('This plugin requires PHP 5.2.0 or higher.');
 		}
 
 		if (!extension_loaded('curl'))

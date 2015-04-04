@@ -7,7 +7,7 @@ if( !defined('EVO_MAIN_INIT') ) die( 'Please, do not access this page directly.'
 
 $trans['ru_RU'] = array(
 '__meta__' => array('format_version'=>1, 'charset'=>'utf-8'),
-'' => "Project-Id-Version: WP to Diaspora*\nReport-Msgid-Bugs-To: http://fplanque.net/\nPOT-Creation-Date: 2015-04-03 20:10-0400\nPO-Revision-Date: 2015-04-03 13:50-0400\nLast-Translator: \nLanguage-Team: \nLanguage: ru\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nX-Generator: POEditor.com\n",
+'' => "Project-Id-Version: WP to Diaspora*\nReport-Msgid-Bugs-To: http://fplanque.net/\nPOT-Creation-Date: 2015-04-04 00:44-0400\nPO-Revision-Date: 2015-04-03 13:50-0400\nLast-Translator: \nLanguage-Team: \nLanguage: ru\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nX-Generator: POEditor.com\n",
 'Diaspora* Pod' => 'Сервер Diaspora*',
 
 );

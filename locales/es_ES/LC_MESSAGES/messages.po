@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WP to Diaspora*\n"
 "Report-Msgid-Bugs-To: http://fplanque.net/\n"
-"POT-Creation-Date: 2015-04-03 20:10-0400\n"
-"PO-Revision-Date: 2015-04-03 20:09-0400\n"
+"POT-Creation-Date: 2015-04-04 00:44-0400\n"
+"PO-Revision-Date: 2015-04-04 00:46-0400\n"
 "Last-Translator: Armando Lüscher\n"
 "Language-Team: \n"
 "Language: es\n"
@@ -35,8 +35,8 @@ msgid "The plugin needs a non-empty code."
 msgstr "El complemento requiere un código no-nulo."
 
 #: ../../../_diaspora.plugin.php:58
-msgid "This plugin requires PHP 5.3.0 or higher."
-msgstr "El complemento requiere PHP 5.3.0 o más alto."
+msgid "This plugin requires PHP 5.2.0 or higher."
+msgstr "El complemento requiere PHP 5.2.0 o más alto."
 
 #: ../../../_diaspora.plugin.php:63
 msgid "This plugin requires the PHP cURL extension."
