@@ -1,6 +1,6 @@
 <?php
 
-require_once 'lib/class-api.php';
+require_once 'diaspora-api.php';
 
 class diaspora_plugin extends Plugin
 {
