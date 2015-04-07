@@ -128,7 +128,7 @@ class diaspora_plugin extends Plugin
 				'type' => 'select',
 			),
 			'msg_format' => array(
-				'defaultvalue' => T_('Just posted $title$ $url$ #b2p'),
+				'defaultvalue' => $this->T_('Just posted $title$ $url$ #b2p'),
 				'label' => $this->T_('Message format'),
 				'note' => $this->T_('$title$, $excerpt$ and $url$ will be replaced appropriately.'),
 				'size' => 30,
