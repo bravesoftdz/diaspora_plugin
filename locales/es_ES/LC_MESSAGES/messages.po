@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: WP to Diaspora*\n"
 "Report-Msgid-Bugs-To: http://fplanque.net/\n"
 "POT-Creation-Date: 2015-04-04 00:44-0400\n"
-"PO-Revision-Date: 2015-04-04 00:46-0400\n"
+"PO-Revision-Date: 2015-04-07 20:23-0400\n"
 "Last-Translator: Armando Lüscher\n"
 "Language-Team: \n"
 "Language: es\n"
@@ -70,47 +70,47 @@ msgstr "Aspectos"
 
 #: ../../../_diaspora.plugin.php:131
 msgid "Just posted $title$ $url$ #b2p"
-msgstr ""
+msgstr "Recién publicado $title$ $url$ #b2p"
 
 #: ../../../_diaspora.plugin.php:132
 msgid "Message format"
-msgstr ""
+msgstr "Formato de mensaje"
 
 #: ../../../_diaspora.plugin.php:133
 msgid "$title$, $excerpt$ and $url$ will be replaced appropriately."
-msgstr ""
+msgstr "$title$, $excerpt$ y $url$ se reemplazarán apropiadamente."
 
 # TRANS: Placeholder is the full pod URL.
 #: ../../../lib/class-api.php:201
 #, php-format
 msgid "Failed to initialise connection to pod \"%s\"."
-msgstr ""
+msgstr "Falla al inicializar la conexión a pod \"%s\"."
 
 #: ../../../lib/class-api.php:231
 msgid "Not logged in."
-msgstr ""
+msgstr "La sesión no está inicializado."
 
 #: ../../../lib/class-api.php:272
 msgid "Couldn't log in with the credentials specified."
-msgstr ""
+msgstr "No su pudo inicializar la sesión con la credenciales especificado."
 
 #: ../../../lib/class-api.php:292
 msgid "Login failed."
-msgstr ""
+msgstr "Fallar al inicializar la sesión."
 
 # TRANS: When an an unknown error occurred in the WP2D_API object.
 #: ../../../lib/class-api.php:351
 msgid "Unknown error occurred."
-msgstr ""
+msgstr "Error desconocido."
 
 #: ../../../lib/class-api.php:374
 msgid "Error loading aspects."
-msgstr ""
+msgstr "Error cargar los aspectos."
 
 #: ../../../lib/class-api.php:398
 msgid "Error loading services."
-msgstr ""
+msgstr "Error cargar los servicios."
 
 #: ../../../lib/class-api.php:474
 msgid "Public"
-msgstr ""
+msgstr "Público"
