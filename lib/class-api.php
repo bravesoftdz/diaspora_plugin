@@ -137,42 +137,15 @@ class WP2D_API {
   }
 
   /**
-   * Get everything set up
+   * Constructor to initialise the connection to diaspora*.
+   *
+   * @param string  $pod       The pod domain to connect to.
+   * @param boolean $is_secure Is this a secure server? (Default: True)
    */
   public function __construct( $pod, $is_secure = true ) {
     // Set class variables.
     $this->_pod       = $pod;
     $this->_is_secure = (bool) $is_secure;
-
-    // Initialize translations
-    $this->initialize_translations();
-  }
-
-  private function initialize_translations()
-  {
-    global $Plugins;
-    $this->plug = NULL;
-    if (is_object($Plugins))
-    {
-      $this->plug = $Plugins->get_by_classname('diaspora_plugin');
-    }
-  }
-
-  public function T_($str, $dom = 'default', $context = '' )
-  {
-    if (is_object($this->plug))
-      return $this->plug->T_($str);
-    elseif (function_exists('_x') && !empty($context))
-      return _x($str, $context, $dom);
-    elseif (function_exists('__'))
-      return __($str, $dom);
-    else
-      return $str;
-  }
-
-  public function TS_($str, $context, $dom = 'default')
-  {
-    return $this->T_($str, $dom, $context);
   }
 
   /**
@@ -197,8 +170,7 @@ class WP2D_API {
     // Get and save the token.
     if ( ! $this->_fetch_token( $force_new_token ) ) {
       $this->last_error = sprintf(
-    /* TRANS: Placeholder is the full pod URL. */
-        $this->TS_( 'Failed to initialise connection to pod "%s".', 'Placeholder is the full pod URL.',  'wp_to_diaspora' ),
+        _x( 'Failed to initialise connection to pod "%s".', 'Placeholder is the full pod URL.',  'wp_to_diaspora' ),
         $this->get_pod_url()
       );
       return false;
@@ -228,7 +200,7 @@ class WP2D_API {
    */
   private function _check_login() {
     if ( ! $this->is_logged_in() ) {
-      $this->last_error = $this->T_( 'Not logged in.', 'wp_to_diaspora' );
+      $this->last_error = __( 'Not logged in.', 'wp_to_diaspora' );
       return false;
     }
     return true;
@@ -269,7 +241,6 @@ class WP2D_API {
     // Do we have the necessary credentials?
     if ( ! isset( $this->_username, $this->_password ) ) {
       $this->_is_logged_in = false;
-      $this->last_error = $this->T_('Couldn\'t log in with the credentials specified.', 'wp_to_diaspora');
       return false;
     }
 
@@ -289,7 +260,7 @@ class WP2D_API {
     // If the request isn't successful, we are not logged in correctly.
     if ( 200 !== $req->info['http_code'] ) {
       // Login failed.
-      $this->last_error = $this->T_( 'Login failed.', 'wp_to_diaspora' );
+      $this->last_error = __( 'Login failed.', 'wp_to_diaspora' );
       return false;
     }
 
@@ -347,8 +318,7 @@ class WP2D_API {
     $req = $this->_http_request( '/status_messages', json_encode( $post_data ), $headers );
     $response = json_decode( $req->response );
     if ( 201 !== $req->info['http_code'] ) {
-      /* TRANS: When an an unknown error occurred in the WP2D_API object. */
-      $this->last_error = ( isset( $response->error ) ) ? $response->error : $this->TS_( 'Unknown error occurred.', 'When an unknown error occurred in the WP2D_API object.', 'wp_to_diaspora' );
+      $this->last_error = ( isset( $response->error ) ) ? $response->error : _x( 'Unknown error occurred.', 'When an unknown error occurred in the WP2D_API object.', 'wp_to_diaspora' );
       return false;
     }
 
@@ -371,7 +341,7 @@ class WP2D_API {
     if ( empty( $this->_aspects ) || (bool) $force ) {
       $req = $this->_http_request( '/bookmarklet' );
       if ( 200 !== $req->info['http_code'] ) {
-        $this->last_error = $this->T_( 'Error loading aspects.', 'wp_to_diaspora' );
+        $this->last_error = __( 'Error loading aspects.', 'wp_to_diaspora' );
         return false;
       }
       // No need for this, as it get's done for each http request anyway.
@@ -395,7 +365,7 @@ class WP2D_API {
     if ( empty( $this->_services ) || (bool) $force ) {
       $req = $this->_http_request( '/bookmarklet' );
       if ( 200 !== $req->info['http_code'] ) {
-        $this->last_error = $this->T_( 'Error loading services.', 'wp_to_diaspora' );
+        $this->last_error = __( 'Error loading services.', 'wp_to_diaspora' );
         return false;
       }
       // No need for this, as it get's done for each http request anyway.
@@ -471,7 +441,7 @@ class WP2D_API {
     // Can we load new aspects while we're at it?
     if ( $aspects_raw = json_decode( $this->_parse_regex( 'aspects', $response ) ) ) {
       // Add the 'public' aspect, as it's global and not user specific.
-      $aspects = array( 'public' => $this->T_( 'Public' ) );
+      $aspects = array( 'public' => __( 'Public' ) );
 
       // Create an array of all the aspects and save them to the settings.
       foreach ( $aspects_raw as $aspect ) {
@@ -490,7 +460,6 @@ class WP2D_API {
     }
 
     // Add debug info.
-  if (class_exists('WP2D_Helpers'))
     WP2D_Helpers::add_debugging( sprintf( "code %s on %s\n", $this->_last_request->info['http_code'], $this->_last_request->info['url'] ) );
 
     // Return the last request details.
@@ -513,9 +482,5 @@ class WP2D_API {
     return trim( array_pop( $matches ) );
   }
 }
-
-/* How the original file was configured, so my changes don't cause formatting inchorency.
- vi:sw=2:ts=2:sts=2:et
- */
 
 ?>
