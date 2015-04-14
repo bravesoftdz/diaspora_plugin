@@ -578,3 +578,9 @@ class HTML_To_Markdown
         }
     }
 }
+
+/* How the original file was configured, so my changes don't cause formatting inchorency.
+ vi:sw=4:ts=4:sts=4:et
+ */
+
+?>
