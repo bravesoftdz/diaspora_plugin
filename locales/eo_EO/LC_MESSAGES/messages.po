@@ -6,9 +6,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: b 2evolution\n"
-"Report-Msgid-Bugs-To: http://fplanque.net/\n"
-"POT-Creation-Date: 2015-04-04 00:44-0400\n"
-"PO-Revision-Date: 2015-04-04 00:45-0400\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-14 18:01-0400\n"
+"PO-Revision-Date: 2015-04-14 18:46-0400\n"
 "Last-Translator: keith <keith@localhost.localdomain>\n"
 "Language-Team: Esperanto\n"
 "Language: eo\n"
@@ -17,105 +17,131 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: ../../../_diaspora.plugin.php:25
+#: ../../../_diaspora.plugin.php:32
 msgid "Diaspora* Plugin for b2evolution"
 msgstr "Kromprogramo Diaspora* por b2evolution"
 
-#: ../../../_diaspora.plugin.php:26
+#: ../../../_diaspora.plugin.php:33
 msgid "Post to your Diaspora* account when you post to your blog"
 msgstr "Afiŝi al via Diaspora*-konto kiam vi afiŝas al via blogo"
 
 # TRANS: Placeholder for the selected pod.
-#: ../../../_diaspora.plugin.php:29
+#: ../../../_diaspora.plugin.php:36
 #, php-format
 msgid "Posts to your Diaspora* account to update %s with details of your blog post."
 msgstr "Afiŝas al via Diaspora*-konto por ĝisdatigi la guŝon %s kun detaloj de via blogero."
 
-#: ../../../_diaspora.plugin.php:37
+#: ../../../_diaspora.plugin.php:40
 msgid "Update your Diaspora* account with details about the new post."
 msgstr "Ĝisdatigi vian Diaspora*-konton kun detaloj pri la nova afiŝo."
 
-#: ../../../_diaspora.plugin.php:53
+#: ../../../_diaspora.plugin.php:56
 msgid "The plugin needs a non-empty code."
 msgstr "La kromprogramo postulas nevakan kodon."
 
-#: ../../../_diaspora.plugin.php:58
+#: ../../../_diaspora.plugin.php:61
 msgid "This plugin requires PHP 5.2.0 or higher."
 msgstr "La kromprogramo postulas PHP eldonon 5.2.0 aŭ pli alta."
 
-#: ../../../_diaspora.plugin.php:63
+#: ../../../_diaspora.plugin.php:66
 msgid "This plugin requires the PHP cURL extension."
 msgstr "La kromprogramo postulas la PHP-etendaĵon cURL."
 
+# TRANS: Blog URL, title of Blog
+#: ../../../_diaspora.plugin.php:105
+#, php-format
+msgid "<div>Original post posted on <a href=\"%s\">%s</a></div>"
+msgstr "<div>Devena afiŝo afiŝita en <a href=\"%s\">%s</a></div>"
+
 # TRANS: Successfully logged in to pod %1$s as user %2$s
-#: ../../../_diaspora.plugin.php:92
+#: ../../../_diaspora.plugin.php:122
 #, php-format
 msgid "Successfully logged in to <a href=\"%1$s\">%1$s</a> as %2$s."
 msgstr "Sukcese ensalutis en <a href=\"%1$s\">%1$s</a> kiel «%2$s»."
 
-#: ../../../_diaspora.plugin.php:104
+#: ../../../_diaspora.plugin.php:132
 msgid "Diaspora* account status"
 msgstr "Diaspora*-konta stato"
 
-#: ../../../_diaspora.plugin.php:109
+#: ../../../_diaspora.plugin.php:141
 msgid "Diaspora* Pod"
 msgstr "Diaspora*-guŝo"
 
-#: ../../../_diaspora.plugin.php:114
+#: ../../../_diaspora.plugin.php:146
 msgid "Username"
 msgstr "Salutnomo"
 
-#: ../../../_diaspora.plugin.php:119
+#: ../../../_diaspora.plugin.php:151
 msgid "Password"
 msgstr "Pasvorto"
 
-#: ../../../_diaspora.plugin.php:124
+#: ../../../_diaspora.plugin.php:160 ../../../_diaspora.plugin.php:169
 msgid "Aspects"
 msgstr "Aspektoj"
 
-#: ../../../_diaspora.plugin.php:131
+#: ../../../_diaspora.plugin.php:170
+msgid "Comma-seperated list of aspect IDs for which the post will be visible."
+msgstr "Listo da aspekto-identigiloj por kiuj la afiŝo videblos apartigitaj de komoj."
+
+#: ../../../_diaspora.plugin.php:176
+msgid "Autoload Aspects"
+msgstr "Aŭtomate ŝargi aspektojn"
+
+#: ../../../_diaspora.plugin.php:177
+msgid "Automatically get your account status and list of aspects from the pod.  This can be very slow."
+msgstr "Aŭtomate atingi viajn kontan staton kaj liston da aspektoj de la guŝo. To eble tre malrapidos."
+
+#: ../../../_diaspora.plugin.php:182
+msgid "Post full posts"
+msgstr "Afiŝi plenajn afiŝojn"
+
+#: ../../../_diaspora.plugin.php:183
+msgid "Whether to post full posts or just share the link."
+msgstr "Ĉu afiŝi plenajn afiŝojn aŭ rekonigi nur la ligilojn."
+
+#: ../../../_diaspora.plugin.php:188
 msgid "Just posted $title$ $url$ #b2p"
 msgstr "Ĵus afiŝis: $title$ $url$ #b2p"
 
-#: ../../../_diaspora.plugin.php:132
+#: ../../../_diaspora.plugin.php:189
 msgid "Message format"
 msgstr "Mesaĝa formato"
 
-#: ../../../_diaspora.plugin.php:133
+#: ../../../_diaspora.plugin.php:190
 msgid "$title$, $excerpt$ and $url$ will be replaced appropriately."
 msgstr "$title$, $excerpt$ kaj $url$ taŭge anstataŭiĝos."
 
 # TRANS: Placeholder is the full pod URL.
-#: ../../../lib/class-api.php:201
+#: ../../../class-api.php:201
 #, php-format
 msgid "Failed to initialise connection to pod \"%s\"."
 msgstr "Malsukcesis startigi konekton al guŝo «%s»."
 
-#: ../../../lib/class-api.php:231
+#: ../../../class-api.php:231
 msgid "Not logged in."
 msgstr "Ne ensalutinta."
 
-#: ../../../lib/class-api.php:272
+#: ../../../class-api.php:272
 msgid "Couldn't log in with the credentials specified."
 msgstr "Ne eblis ensaluti per la specifitaj ensaluto-informoj."
 
-#: ../../../lib/class-api.php:292
+#: ../../../class-api.php:292
 msgid "Login failed."
 msgstr "Ensaluto malsukcesis."
 
 # TRANS: When an an unknown error occurred in the WP2D_API object.
-#: ../../../lib/class-api.php:351
+#: ../../../class-api.php:351
 msgid "Unknown error occurred."
 msgstr "Nekonata eraro okazis."
 
-#: ../../../lib/class-api.php:374
+#: ../../../class-api.php:374
 msgid "Error loading aspects."
 msgstr "Eraro dum ŝargi aspektojn."
 
-#: ../../../lib/class-api.php:398
+#: ../../../class-api.php:398
 msgid "Error loading services."
 msgstr "Eraro dum ŝargi servojn."
 
-#: ../../../lib/class-api.php:474
+#: ../../../class-api.php:474
 msgid "Public"
 msgstr "Publika"

@@ -1,121 +1,148 @@
-# SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR Francois PLANQUE
-# This file is distributed under the same license as the PACKAGE package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# diaspora_plugin - Language file
+# Copyright (C) 2015 keith
+# This file is distributed under the same license as the diaspora_plugin package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2015.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: http://fplanque.net/\n"
-"POT-Creation-Date: 2015-04-04 00:44-0400\n"
+"Project-Id-Version: diaspora_plugin 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-04-14 18:01-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "Language: \n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../../../_diaspora.plugin.php:25
+#: ../../../_diaspora.plugin.php:32
 msgid "Diaspora* Plugin for b2evolution"
 msgstr ""
 
-#: ../../../_diaspora.plugin.php:26
+#: ../../../_diaspora.plugin.php:33
 msgid "Post to your Diaspora* account when you post to your blog"
 msgstr ""
 
 #. TRANS: Placeholder for the selected pod.
-#: ../../../_diaspora.plugin.php:29
+#: ../../../_diaspora.plugin.php:36
 #, php-format
 msgid "Posts to your Diaspora* account to update %s with details of your blog post."
 msgstr ""
 
-#: ../../../_diaspora.plugin.php:37
+#: ../../../_diaspora.plugin.php:40
 msgid "Update your Diaspora* account with details about the new post."
 msgstr ""
 
-#: ../../../_diaspora.plugin.php:53
+#: ../../../_diaspora.plugin.php:56
 msgid "The plugin needs a non-empty code."
 msgstr ""
 
-#: ../../../_diaspora.plugin.php:58
+#: ../../../_diaspora.plugin.php:61
 msgid "This plugin requires PHP 5.2.0 or higher."
 msgstr ""
 
-#: ../../../_diaspora.plugin.php:63
+#: ../../../_diaspora.plugin.php:66
 msgid "This plugin requires the PHP cURL extension."
 msgstr ""
 
+#. TRANS: Blog URL, title of Blog
+#: ../../../_diaspora.plugin.php:105
+#, php-format
+msgid "<div>Original post posted on <a href=\"%s\">%s</a></div>"
+msgstr ""
+
 #. TRANS: Successfully logged in to pod %1$s as user %2$s
-#: ../../../_diaspora.plugin.php:92
+#: ../../../_diaspora.plugin.php:122
 #, php-format
 msgid "Successfully logged in to <a href=\"%1$s\">%1$s</a> as %2$s."
 msgstr ""
 
-#: ../../../_diaspora.plugin.php:104
+#: ../../../_diaspora.plugin.php:132
 msgid "Diaspora* account status"
 msgstr ""
 
-#: ../../../_diaspora.plugin.php:109
+#: ../../../_diaspora.plugin.php:141
 msgid "Diaspora* Pod"
 msgstr ""
 
-#: ../../../_diaspora.plugin.php:114
+#: ../../../_diaspora.plugin.php:146
 msgid "Username"
 msgstr ""
 
-#: ../../../_diaspora.plugin.php:119
+#: ../../../_diaspora.plugin.php:151
 msgid "Password"
 msgstr ""
 
-#: ../../../_diaspora.plugin.php:124
+#: ../../../_diaspora.plugin.php:160
+#: ../../../_diaspora.plugin.php:169
 msgid "Aspects"
 msgstr ""
 
-#: ../../../_diaspora.plugin.php:131
+#: ../../../_diaspora.plugin.php:170
+msgid "Comma-seperated list of aspect IDs for which the post will be visible."
+msgstr ""
+
+#: ../../../_diaspora.plugin.php:176
+msgid "Autoload Aspects"
+msgstr ""
+
+#: ../../../_diaspora.plugin.php:177
+msgid "Automatically get your account status and list of aspects from the pod.  This can be very slow."
+msgstr ""
+
+#: ../../../_diaspora.plugin.php:182
+msgid "Post full posts"
+msgstr ""
+
+#: ../../../_diaspora.plugin.php:183
+msgid "Whether to post full posts or just share the link."
+msgstr ""
+
+#: ../../../_diaspora.plugin.php:188
 msgid "Just posted $title$ $url$ #b2p"
 msgstr ""
 
-#: ../../../_diaspora.plugin.php:132
+#: ../../../_diaspora.plugin.php:189
 msgid "Message format"
 msgstr ""
 
-#: ../../../_diaspora.plugin.php:133
+#: ../../../_diaspora.plugin.php:190
 msgid "$title$, $excerpt$ and $url$ will be replaced appropriately."
 msgstr ""
 
 #. TRANS: Placeholder is the full pod URL.
-#: ../../../lib/class-api.php:201
+#: ../../../class-api.php:201
 #, php-format
 msgid "Failed to initialise connection to pod \"%s\"."
 msgstr ""
 
-#: ../../../lib/class-api.php:231
+#: ../../../class-api.php:231
 msgid "Not logged in."
 msgstr ""
 
-#: ../../../lib/class-api.php:272
+#: ../../../class-api.php:272
 msgid "Couldn't log in with the credentials specified."
 msgstr ""
 
-#: ../../../lib/class-api.php:292
+#: ../../../class-api.php:292
 msgid "Login failed."
 msgstr ""
 
 #. TRANS: When an an unknown error occurred in the WP2D_API object.
-#: ../../../lib/class-api.php:351
+#: ../../../class-api.php:351
 msgid "Unknown error occurred."
 msgstr ""
 
-#: ../../../lib/class-api.php:374
+#: ../../../class-api.php:374
 msgid "Error loading aspects."
 msgstr ""
 
-#: ../../../lib/class-api.php:398
+#: ../../../class-api.php:398
 msgid "Error loading services."
 msgstr ""
 
-#: ../../../lib/class-api.php:474
+#: ../../../class-api.php:474
 msgid "Public"
 msgstr ""
