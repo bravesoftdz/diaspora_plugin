@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: WP to Diaspora*\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-04-14 18:01-0400\n"
-"PO-Revision-Date: 2015-04-14 18:45-0400\n"
+"PO-Revision-Date: 2015-04-17 01:23-0400\n"
 "Last-Translator: Katrin Leinweber\n"
 "Language-Team: \n"
 "Language: de\n"
@@ -52,7 +52,7 @@ msgstr "<div>Ursprünglich Beitrag auf <a href=\"%s\"%s</a> eingetragen</div>"
 #: ../../../_diaspora.plugin.php:122
 #, php-format
 msgid "Successfully logged in to <a href=\"%1$s\">%1$s</a> as %2$s."
-msgstr "Mit Erfolg hat der Benutzer „%2$s” ins Pod <a href=\"%1$s\">%1$s</a> eingeloggt."
+msgstr "Mit Erfolg hat der Benutzer „%2$s” in den Pod <a href=\"%1$s\">%1$s</a> eingeloggt."
 
 #: ../../../_diaspora.plugin.php:132
 msgid "Diaspora* account status"
@@ -110,7 +110,7 @@ msgstr "$title$, $excerpt$ und $url$ werden entsprechend ersetzt."
 #: ../../../class-api.php:201
 #, php-format
 msgid "Failed to initialise connection to pod \"%s\"."
-msgstr "Scheitert initialisieren Verbindung zu Pod \"%s\"."
+msgstr "Scheiterte eine Verbindung zum Pod \"%s\" initialisieren."
 
 #: ../../../class-api.php:231
 msgid "Not logged in."
