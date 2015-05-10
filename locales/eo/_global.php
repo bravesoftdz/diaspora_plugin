@@ -5,7 +5,7 @@
  */
 if( !defined('EVO_MAIN_INIT') ) die( 'Please, do not access this page directly.' );
 
-$trans['eo_EO'] = array(
+$trans['eo'] = array(
 '__meta__' => array('format_version'=>1, 'charset'=>'utf-8'),
 '' => "Project-Id-Version: b 2evolution\nReport-Msgid-Bugs-To: \nPOT-Creation-Date: 2015-04-14 18:01-0400\nPO-Revision-Date: 2015-04-14 18:46-0400\nLast-Translator: keith <keith@localhost.localdomain>\nLanguage-Team: Esperanto\nLanguage: eo\nMIME-Version: 1.0\nContent-Type: text/plain; charset=UTF-8\nContent-Transfer-Encoding: 8bit\nPlural-Forms: nplurals=2; plural=(n != 1);\n",
 'Diaspora* Plugin for b2evolution' => 'Kromprogramo Diaspora* por b2evolution',
